@@ -1,0 +1,68 @@
+'use client';
+
+import TimezoneCard from './components/TimezoneCard';
+
+const TIMEZONES = [
+  { timezone: 'Asia/Kolkata', label: 'India' },
+  { timezone: 'America/New_York', label: 'New York' },
+  { timezone: 'Europe/London', label: 'London' },
+  { timezone: 'Europe/Paris', label: 'Paris' },
+  { timezone: 'Asia/Tokyo', label: 'Tokyo' },
+  { timezone: 'Australia/Sydney', label: 'Sydney' },
+  { timezone: 'America/Los_Angeles', label: 'Los Angeles' },
+  { timezone: 'Asia/Dubai', label: 'Dubai' },
+  { timezone: 'Asia/Singapore', label: 'Singapore' },
+  { timezone: 'Asia/Bangkok', label: 'Bangkok' },
+  { timezone: 'America/Chicago', label: 'Chicago' },
+  { timezone: 'Europe/Berlin', label: 'Berlin' },
+];
+
+export default function Home() {
+  return (
+    <div className="flex flex-col flex-1 bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen">
+      <main className="flex-1 max-w-7xl w-full mx-auto py-12 px-4">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-bold text-gray-900 mb-2">World Timezone Clock</h1>
+          <p className="text-lg text-gray-600">
+            Check current time across different timezones with interactive clocks
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {TIMEZONES.map(({ timezone, label }) => (
+            <TimezoneCard key={timezone} timezone={timezone} label={label}
+            >
+              Learning
+            </a>{" "}
+            center.
+          </p>
+        </div>
+        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
+          <a
+            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
+            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              className="dark:invert"
+              src="/vercel.svg"
+              alt="Vercel logomark"
+              width={16}
+              height={16}
+            />
+            Deploy Now
+          </a>
+          <a
+            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
+            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Documentation
+          </a>
+        </div>
+      </main>
+    </div>
+  );
+}
