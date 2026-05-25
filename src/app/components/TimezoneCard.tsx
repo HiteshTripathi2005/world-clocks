@@ -75,33 +75,33 @@ export default function TimezoneCard({ timezone, label }: TimezoneCardProps) {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-lg p-3 border border-gray-200 hover:shadow-xl transition-shadow">
-      <div className="flex items-stretch gap-3">
+    <div className="bg-white rounded-lg shadow-lg p-4 border border-gray-200 hover:shadow-xl transition-shadow">
+      <div className="flex items-stretch gap-4">
         {/* Clock - Left */}
-        <div className="flex items-center justify-center">
+        <div className="flex items-center justify-center flex-shrink-0">
           <Clock date={getClockDate()} />
         </div>
 
         {/* Text Content - Right */}
-        <div className="flex-1 flex flex-col justify-between">
+        <div className="flex-1 flex flex-col justify-between min-w-0">
           <div>
-            <h3 className="text-sm font-bold text-gray-900 leading-tight">{label}</h3>
-            <div className="flex items-center gap-1.5 mt-1">
-              <p className="text-xs text-gray-600">{timezone}</p>
+            <h3 className="text-base font-bold text-gray-900 leading-tight">{label}</h3>
+            <div className="flex items-center gap-2 mt-2 flex-wrap">
+              <p className="text-sm text-gray-600 truncate">{timezone}</p>
               <button
                 onClick={copyToClipboard}
                 title="Copy timezone"
-                className={`px-1.5 py-0.5 rounded text-xs font-medium transition-all duration-200 ${
+                className={`px-3 py-1 rounded-md text-sm font-medium whitespace-nowrap transition-all duration-200 flex-shrink-0 ${
                   copied
                     ? 'bg-green-500 text-white'
-                    : 'bg-gray-100 text-gray-700 hover:bg-blue-100 hover:text-blue-700 active:scale-95'
+                    : 'bg-gray-200 text-gray-800 hover:bg-blue-500 hover:text-white active:scale-95'
                 }`}
               >
-                {copied ? '✓' : 'Copy'}
+                {copied ? '✓ Copied' : 'Copy'}
               </button>
             </div>
           </div>
-          <div>
+          <div className="mt-2">
             <p className="text-lg font-mono font-bold text-blue-600 leading-tight">{getTimezoneTime()}</p>
             <p className="text-xs text-gray-500">{getTimezoneDate()}</p>
           </div>
